@@ -3,3 +3,5 @@
 	email = 74717437+AntCChaichot@users.noreply.github.com
 [color]
 	ui = auto
+[core]
+	editor = vim
