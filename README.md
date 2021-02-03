@@ -1,6 +1,6 @@
 # Anthiwat's Dotfiles
 
-##Steps that are achieved
+## Steps that are achieved
 
 1. Clone repo into a hidden directory
 
@@ -22,30 +22,30 @@ ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 
 Remarks: no programs or plugins are installed yet
 
-##Installing Programs and Plugins
+## Installing Programs and Plugins
 For Debian-based distributions
-###Oh my Zsh
+### Oh my Zsh
 For those without Z shell
 ```bash
-#Install curl
+# Install curl
 sudo apt install get curl
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-###Vim
+### Vim
 ```bash
 sudo apt install vim
 ```
-###Tmux
+### Tmux
 ```bash
 sudo apt install tmux
 ```
-###Git
+### Git
 ```bash
 sudo apt install git
 ```
 
-###Kite
-###NERDTree
-###lightline
+### Kite
+### NERDTree
+### lightline
