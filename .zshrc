@@ -14,7 +14,10 @@ ZSH_THEME="random"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME_RANDOM_CANDIDATES=("cloud" "arrow" "agnoster")
+ZSH_THEME_RANDOM_CANDIDATES=("cloud" "arrow")
+
+#How long to wait (in milliseconds) for additional characters sequence
+KEYTIMEOUT=1
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
