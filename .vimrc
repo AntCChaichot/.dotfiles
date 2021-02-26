@@ -1,7 +1,7 @@
 "Get the defaults that most users want. (Uncomment line below)
 " source $VIMRUNTIME/defaults.vim
 
-if &t_co > 2 || has("gui_running")
+if &t_Co > 2 || has("gui_running")
   " Switch on highlighting the last used search pattern.
   set hlsearch
 endif
@@ -37,6 +37,8 @@ set timeoutlen=1000
 set ttimeoutlen=5
 " can also use below line
 " set noesckeys
+
+let g:kite_supported_language = ['*']
 
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
