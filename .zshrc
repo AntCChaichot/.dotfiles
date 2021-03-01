@@ -107,6 +107,5 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/.chromedriver:/usr/lib/jvm/java-11-open
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias python="python3"
-alias pip="pip3"
+alias pip3="pip"
 alias open='xdg-open'

@@ -38,7 +38,7 @@ set ttimeoutlen=5
 " can also use below line
 " set noesckeys
 
-let g:kite_supported_language = ['*']
+let g:kite_supported_languages = ['*']
 
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
