@@ -38,6 +38,9 @@ set ttimeoutlen=5
 " can also use below line
 " set noesckeys
 
+" set clipboard for easier copy and paste
+set clipboard=unnamedplus
+
 let g:kite_supported_languages = ['*']
 
 let g:lightline = {

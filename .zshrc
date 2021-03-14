@@ -79,7 +79,8 @@ plugins=(
 	tmux
 	)
 
-source $ZSH/oh-my-zsh.sh
+#For Oh My Zsh
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -107,5 +108,4 @@ export PATH=$PATH:$HOME/.local/bin:$HOME/.chromedriver:/usr/lib/jvm/java-11-open
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias pip3="pip"
 alias open='xdg-open'
