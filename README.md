@@ -11,13 +11,16 @@ git clone https://github.com/AntCChaichot/My-Configuration.git ~/.dotfiles
 
 2. Create symlinks in the Home directory to the real files in the repo. (Doing this will allow changes to be made on both files when saved)
 
+!!! Warning: This may overwrite files !!!
+
 ```bash
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.profile ~/.profile
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/.vimrc ~/.vimrc
-ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+ln -sf ~/.dotfiles/.profile ~/.profile
+ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/.vimrc ~/.vimrc
+ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/.dotfiles/fish_variables ~/.config/fish/fish_variables
 ```
 
 Remarks: no programs or plugins are installed yet
