@@ -78,7 +78,7 @@ sudo apt -y install fonts-tlwg-loma
 
 (Install Vim)
 sudo apt -y install vim
-
+sudo apt -y install vim-gtk3 # for clipboard
 
 (Install wget to pull from repo)
 sudo apt -y install wget
