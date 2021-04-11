@@ -32,4 +32,4 @@ SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_prompt_color_cwd:9400b2
 SETUVAR fish_prompt_pwd_dir_length:4
-SETUVAR fish_user_paths:/usr/lib/jvm/java\x2d11\x2dopenjdk\x2damd64/bin/java\x1e/usr/sbin\x1e/usr/local/sbin\x1e/sbin\x1e/home/anthiwat/\x2echromedriver
+SETUVAR fish_user_paths:/usr/lib/jvm/java\x2d11\x2dopenjdk\x2damd64/bin/java\x1e/home/anthiwat/\x2echromedriver
