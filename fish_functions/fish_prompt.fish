@@ -52,4 +52,5 @@ function fish_prompt
   end
 
   echo -n -s " "
+
 end
