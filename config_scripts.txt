@@ -131,24 +131,25 @@ sudo apt-get -y install keepassxc
 
 (For Gnome)
 (Enable Gnome Extensions)
-sudo apt -y install chrome-gnome-shell
+sudo apt -y install gnome-shell-extensions gnome-tweaks
 
-
-(DashtoDock)
-sudo apt -y install -y chrome-gnome-shell
-
-(Then look at extensions.gnome.org and gnome-look.org)
-Desktop Icon
-Topicons Plus
-User themes: 
+visit https://extensions.gnome.org/
+- App Icons Taskbar
+- Blur My shell
+- gesture improvements (and https://github.com/harshadgavali/gnome-x11-gesture-daemon)
+- User themes: 
+    visit https://www.gnome-look.org/browse/
 	--> in ~/.themes
+    Tokyo Night borderless
 	Sweet Dark
 	Ant-Dracula
 	--> in ~/.icons
 	Candy-icons
-	Flatery-Gray
-	Flatery-Orange
-
+    Tela-circle
+    capitaine-cursors
+- GRUB boot
+    tela grub theme
+    sleek orange
 
 (Set shortcuts)
 ctrl+alt+esc for xkill (unbind other esc first to set)
