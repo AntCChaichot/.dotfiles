@@ -59,27 +59,14 @@ let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'inspire', 'kite' ] ]
+      \             [ 'readonly', 'filename', 'inspire'] ]
       \ },
       \ 'component': {
       \   'inspire': 'Fighting!',
-      \   'kite': '%{kite#statusline()}',
-      \ }
-      \ }
-
-let g:lightline = {
-      \ 'colorscheme': 'seoul256',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'inspire', 'kite' ] ]
-      \ },
-      \ 'component': {
-      \   'inspire': 'Fighting!',
-      \   'kite': '%{kite#statusline()}',
       \ },
       \ 'component_function': {
       \   'filename': 'LightlineFilename',
-      \ },
+      \ }
       \ }
 
 

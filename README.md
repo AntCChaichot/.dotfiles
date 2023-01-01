@@ -54,11 +54,11 @@ Create a directory for the plugins manually since not using a package manager
 ```bash
 # lightline
 mkdir -p ~/.vim/pack/lightline/start
-git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/lightline/start/
+git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/lightline/start/lightline
 
 # NERDTree
 mkdir -p ~/.vim/pack/NERDTree/start
-git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/NERDTree/start/
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/NERDTree/start/NERDTree
 ```
 
 3. Create symlinks in the Home directory to the real files in the repo. (Doing this will allow changes to be made on both files when saved)
@@ -87,4 +87,9 @@ ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
 
 # For kitty
 ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+```
+
+4. Change shell according to your preferences
+```bash
+sudo chsh -s $(which fish)
 ```
