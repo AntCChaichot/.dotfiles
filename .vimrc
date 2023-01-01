@@ -14,7 +14,8 @@ set tabstop=4 " number of spaces the fule counts for
 set softtabstop=-1 " number of spaces a <tab> counts while editing e.g. tab or bs, can be used to delete 2 spaces in a tab, if set to -1, shiftwidth value is used
 set expandtab " to insert space characters when tab is pressed, normal tab = Ctrl-V<Tab>
 
-set number " number of lines
+" set number " number of lines
+set relativenumber " number of lines relative to cursor
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -46,12 +47,13 @@ cnoremap kj <C-C>
 cnoremap jk <C-C>
 
 
-let g:kite_supported_languages = ['*']
-let g:kite_tab_complete=1 " insert with tab (normally enter)
+" copy to system clipboard (X11) using "+y
+" install xclip (if haven't already)
+map "+y y:call system("xclip -selection clip-board", @")<CR>
 
-" Preview for vim and kite
-" set completeopt+=menuone
-" set completeopt+=noinsert
+" copy to system cliboard (wayland)
+" map works in all mode, install wl-clipboard first, remove backslash
+" map \"+y y:call system("wl-copy", @")<CR>
 
 let g:lightline = {
       \ 'colorscheme': 'seoul256',

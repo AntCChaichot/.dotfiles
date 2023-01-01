@@ -1,43 +1,20 @@
-# Anthiwat's Dotfiles
+# Thapanin's Dotfiles
 
 ## Steps that are achieved
 
 1. Clone repo into a hidden directory
 
 ```bash
+# Install git first (sudo apt install git)
+
 # Use HTTPS
-git clone https://github.com/AntCChaichot/My-Configuration.git ~/.dotfiles
+git clone https://github.com/AntCChaichot/.dotfiles.git
 ```
 
-2. Create symlinks in the Home directory to the real files in the repo. (Doing this will allow changes to be made on both files when saved)
+2. Install Programs and Plugins
 
-!!! Warning: This may overwrite files !!!
-
-```bash
-ln -sf ~/.dotfiles/.zshrc ~/.zshrc
-ln -sf ~/.dotfiles/.bashrc ~/.bashrc
-ln -sf ~/.dotfiles/.profile ~/.profile
-ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/.vimrc ~/.vimrc
-ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/fish_variables ~/.config/fish/fish_variables
-```
-
-Remarks: no programs or plugins are installed yet
-
-## Installing Programs and Plugins
 For Debian-based distributions
 
-```bash
-# Install curl
-sudo apt install get curl
-```
-
-### Zsh
-For those without Z shell
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
 ### Fish for Debian 10 Buster (For others, check out fishshell.com)
 ```bash
 # Install fish
@@ -50,6 +27,15 @@ sudo apt install fish
 curl -L https://get.oh-my.fish | fish
 ```
 
+### Zsh
+For those without Z shell and ohmyzsh
+```bash
+# Install curl
+sudo apt install get curl
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ### Vim
 ```bash
 sudo apt install vim
@@ -58,11 +44,47 @@ sudo apt install vim
 ```bash
 sudo apt install tmux
 ```
-### Git
+### Kitty Terminal
 ```bash
-sudo apt install git
+sudo apt install kitty
 ```
 
-### Kite
-### NERDTree
-### lightline
+### Vim Plugins
+Create a directory for the plugins manually since not using a package manager
+```bash
+# lightline
+mkdir -p ~/.vim/pack/lightline/start
+git clone https://github.com/itchyny/lightline.vim.git ~/.vim/pack/lightline/start/
+
+# NERDTree
+mkdir -p ~/.vim/pack/NERDTree/start
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/NERDTree/start/
+```
+
+3. Create symlinks in the Home directory to the real files in the repo. (Doing this will allow changes to be made on both files when saved)
+!!! Warning: This may overwrite files !!!
+
+```bash
+# For Fish
+ln -sf ~/.dotfiles/fish_variables ~/.config/fish/fish_variables
+ln -sf ~/.dotfiles/fish_functions/* ~/.config/fish/functions/
+
+# For Zsh
+ln -sf ~/.dotfiles/.zshrc ~/.zshrc
+
+# For Bash
+ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+ln -sf ~/.dotfiles/.profile ~/.profile
+
+# For git
+ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+
+# For vim
+ln -sf ~/.dotfiles/.vimrc ~/.vimrc
+
+# For tmux
+ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
+
+# For kitty
+ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+```
