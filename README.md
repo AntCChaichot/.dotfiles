@@ -124,3 +124,9 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100
 sudo update -alternatives --install /usr/bin/python python $(which python3) 30
 sudo update -alternatives --install /usr/bin/python python $(which python2) 20
 ```
+
+8. Setup Dynamic Wallpaper (Optional)
+```bash
+# From github.com/saint-13/Linux_Dynamic_Wallpapers
+curl -s "https://raw.githubusercontent.com/saint-13/Linux_Dynamic_Wallpapers/main/Easy_Install.sh" | sudo bash
+```
