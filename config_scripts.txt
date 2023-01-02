@@ -1,80 +1,19 @@
 On Debian:
-(Change /etc/apt/sources.list)
---------------------------------------------------------------------------------
-# 
+- Change /etc/apt/sources.list
 
-# deb cdrom:[Debian GNU/Linux 10.8.0 _Buster_ - Official amd64 NETINST 20210206-10:34]/ buster main
-
-# deb cdrom:[Debian GNU/Linux 10.8.0 _Buster_ - Official amd64 NETINST 20210206-10:34]/ buster main
-
-deb http://mirror.applebred.net/debian/ buster main non-free contrib
-deb-src http://mirror.applebred.net/debian/ buster main non-free contrib
-
-deb http://security.debian.org/debian-security buster/updates main contrib non-free
-deb-src http://security.debian.org/debian-security buster/updates main contrib non-free
-
-# buster-updates, previously known as 'volatile'
-deb http://mirror.applebred.net/debian/ buster-updates main contrib non-free
-deb-src http://mirror.applebred.net/debian/ buster-updates main contrib non-free
-
-
-deb http://deb.debian.org/debian buster main contrib non-free
-deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
-deb http://deb.debian.org/debian buster-updates main contrib non-free
-
-# This system was installed using small removable media
-# (e.g. netinst, live or single CD). The matching "deb cdrom"
-# entries were disabled at the end of the installation process.
-# For information about how to configure apt package sources,
-# see the sources.list(5) manual.
-
-
---------------------------------------------------------------------------------
-
-(Swictch to fastest repo mirror)
+(Add contrib and non-free repos)
 do in softwares & updates
 sudo apt update
 sudo apt -y install apt-file
 sudo apt-file update
 
-
-(Change swappiness to 10)
-sudo vim /etc/sysctl.conf
-
-
-(For Nvidia Card)
-sudo apt -y install nvidia-driver
-sudo apt install nvidia-driver
-sudo reboot
-**If still doesn't work** (Secure Boot)
-(Check)
-sudo apt -y install inxi
-inxi -G
---> if no driver:
-Download driver from nvidia page
-(Generate public/private keys)
-openssl req -new -x509 -newkey rsa:2048 -keyout /home/anthiwat/Nvidia.key -outform DER -out /home/anthiwat/Nvidia.der -nodes -days 36500 -subj "/CN=Graphics Drivers"
-(enroll mok and install missing firmware)
-sudo mokutil --import ./Nvidia.der
-sudo apt-get -y install firmware-linux
-sudo reboot
-(If missing in gp100)
-cd firmware/nvidia/gp100
-sudo cp ucode_load.bin ../../gv100/acr/
-(If Swap doens't work)
-In gparted, delete and create new one with format linux-swap and swapon
-(Finally)
-echo options nouveau modeset=0 | sudo tee -a /etc/modprobe.d/nouveau-kms.conf; sudo update-initramfs -u
-sudo reboot
-
-
-(Switch to XOrg)
-switch to System X11 Default in login page
-
+(Nvidia Card)
+sudo apt install -y nvidia-detect
+sudo nvidia-detect
+sudo apt install -y nvidia-driver (according to the recommendation)
 
 (Install Thai Fonts)
 sudo apt -y install fonts-tlwg-loma
-
 
 (Install Vim)
 sudo apt -y install vim
@@ -82,19 +21,10 @@ sudo apt -y install vim
 (Install wget to pull from repo)
 sudo apt -y install wget
 
-
-(Install Zoom Meetings)
-sudo apt -y install ./zoom_amd.deb
-
-
-(Install synaptic)
-do in softwares
-
+- Install Zoom Meetings
 
 (Install Build-essentials for some programs)
 sudo apt -y install build-essential dkms linux-headers-$(uname-r)
-
-
 
 (Install extra fonts)
 sudo apt -y install ttf-mscorefonts-installer rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi
@@ -115,28 +45,21 @@ sudo ufw delete 1 --> check from numbered
 (Install ssh)
 sudo apt -y install ssh
 
-
 (Install Power saving)
 sudo apt -y install tlp
-
 
 (Install Google Chrome)
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt -y install ./google-chrome-stable_current_amd64.deb
 
-
 (Install KeePassXC)
 sudo apt-get -y install keepassxc
-
-
-(For Gnome)
-(Enable Gnome Extensions)
-sudo apt -y install gnome-shell-extensions gnome-tweaks
 
 visit https://extensions.gnome.org/
 - App Icons Taskbar
 - Blur My shell
 - gesture improvements (and https://github.com/harshadgavali/gnome-x11-gesture-daemon)
+- Forge
 - User themes: 
     visit https://www.gnome-look.org/browse/
 	--> in ~/.themes
@@ -154,14 +77,6 @@ visit https://extensions.gnome.org/
 (Set shortcuts)
 ctrl+alt+esc for xkill (unbind other esc first to set)
 ctrl+alt+t for terminal (command = gnome-terminal)
-
-
-(Set update alternatives)
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100
-
-sudo update -alternatives --install /usr/bin/python python /usr/bin/python3.7 30
-sudo update -alternatives --install /usr/bin/python python /usr/bin/python2.7 20
-
 
 (If all done = clean up)
 sudo apt update && sudo apt upgrade

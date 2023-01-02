@@ -93,3 +93,34 @@ ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 ```bash
 sudo chsh -s $(which fish)
 ```
+
+### For GNOME DE
+5. Change themes, icons, and cursors in gnome tweaks
+
+```bash
+# Enable Gnome Extensions
+sudo apt -y install gnome-shell-extensions gnome-tweaks chrome-gnome-shell
+
+# Copy themes
+mkdir -p ~/.themes
+cp ~/.dotfiles/.themes/* ~/.themes
+
+# Copy icons
+mkdir -p ~/.icons
+cp ~/.dotfiles/.icons/* ~/.icons
+```
+
+6. Change Swappiness to improve performance
+```bash
+echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
+```
+
+7. Update alternatives for default applications
+```bash
+# For Vim
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 100
+
+# For Python
+sudo update -alternatives --install /usr/bin/python python $(which python3) 30
+sudo update -alternatives --install /usr/bin/python python $(which python2) 20
+```
