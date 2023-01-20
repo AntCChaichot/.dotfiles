@@ -58,6 +58,9 @@ sudo apt-get -y install keepassxc
 visit https://extensions.gnome.org/
 - App Icons Taskbar
 - Blur My shell
+- Dash to Dock (disable show overview on startup)
+- panel corners
+- NoAnnoyance v2
 - gesture improvements (and https://github.com/harshadgavali/gnome-x11-gesture-daemon)
 - Forge
 - User themes: 
