@@ -63,6 +63,7 @@ visit https://extensions.gnome.org/
 - NoAnnoyance v2
 - gesture improvements (and https://github.com/harshadgavali/gnome-x11-gesture-daemon)
 - Forge
+- Hanabi
 - User themes: 
     visit https://www.gnome-look.org/browse/
 	--> in ~/.themes
