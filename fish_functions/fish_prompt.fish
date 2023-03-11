@@ -36,9 +36,9 @@ function fish_prompt
 
   # change prompt here
   if test $last_command_status -eq 0
-    echo -n -s "$arrow_success $arrow with $color_name $name $normal_color at"
+    echo -n -s "$arrow_success $arrow $normal_color with $color_name $name $normal_color at"
   else
-    echo -n -s "$arrow_failed $arrow with $color_name $name $normal_color at"
+    echo -n -s "$arrow_failed $arrow $normal_color with $color_name $name $normal_color at"
   end
 
   if git_is_repo
