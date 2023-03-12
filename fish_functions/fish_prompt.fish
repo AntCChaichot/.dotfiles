@@ -13,10 +13,23 @@ function fish_prompt
   end
 
   # main icon, select one
-  #set -l fish     "⋊>"
-  set -l arrow     "➹  "
-  set -l name       "thapanin"
-
+  set -l fish     "⋊>"
+  set -l arrow     "➹ "
+  set -l moon1      "⏾ "
+  set -l moon2       "🌙"
+  set -l seal       "🦭"
+  set -l hedgehog   "🦔"
+  set -l ai         "愛"
+  set -l yume       "夢"
+  set -l tanabata   "🎋"
+  set -l lantern    "🏮"
+  set -l fox        "🦊"
+  set -l butterfly  "🦋"
+  set -l arrow1     "⤷"
+  set -l arrow2     "↪"
+  set -l arrow3     "╚⟫"
+  #set -l arrow4     "╰ ⧿⌲ " #alternative
+  set -l arrow4     "╰‑⌲ "
   set -l ahead    "↑"
   set -l behind   "↓"
   set -l diverged "⥄ "
@@ -24,9 +37,9 @@ function fish_prompt
   set -l none     "◦"
 
   set -l normal_color     (set_color normal)
-  set -l arrow_success      (set_color -o FF6700)
-  set -l arrow_failed       (set_color -o brred)
-  set -l color_name         (set_color magenta)
+  set -l good_color      (set_color  86C166)
+  set -l failed_color       (set_color  F75C2F)
+  set -l color_name         (set_color 006284)
   set -l work_dir           (prompt_pwd)
   #set -l success_color    (set_color $fish_pager_color_progress 2> /dev/null; or set_color cyan)
   set -l success_color    (set_color cyan)
@@ -34,13 +47,7 @@ function fish_prompt
   set -l directory_color  (set_color $fish_color_quote 2> /dev/null; or set_color brown)
   set -l repository_color (set_color $fish_color_cwd 2> /dev/null; or set_color green)
 
-  # change prompt here
-  if test $last_command_status -eq 0
-    echo -n -s "$arrow_success $arrow $normal_color with $color_name $name $normal_color at"
-  else
-    echo -n -s "$arrow_failed $arrow $normal_color with $color_name $name $normal_color at"
-  end
-
+  # change prompt icons and others here
   if git_is_repo
     if test "$theme_short_path" = 'yes'
       set root_folder (command git rev-parse --show-toplevel 2> /dev/null)
@@ -48,16 +55,41 @@ function fish_prompt
       set cwd (echo $PWD | sed -e "s|$parent_root_folder/||")
     end
 
-    echo -n -s " " $directory_color $cwd $normal_color
-    echo -n -s " on " $repository_color (git_branch_name) $normal_color " "
+    if test $last_command_status -eq 0
+      # separate lines to minimize spaces
+      echo -n -s "$tanabata $normal_color" 
+      echo -n -s "with $color_name$USER $normal_color"
+      echo -n -s "at $directory_color$cwd $normal_color"
+      echo -n -s "on " $repository_color (git_branch_name) $normal_color " "
+      if git_is_touched
+        echo -n -s -e $dirty "\n$good_color$arrow4"
+      else
+        echo -n -s -e (git_ahead $ahead $behind $diverged $none) "\n$good_color$arrow4"
+      end
 
-    if git_is_touched
-      echo -n -s $dirty
     else
-      echo -n -s (git_ahead $ahead $behind $diverged $none)
+      echo -n -s "$lantern $normal_color" 
+      echo -n -s "with $color_name$USER $normal_color"
+      echo -n -s "at $directory_color$cwd $normal_color"
+      echo -n -s "on " $repository_color (git_branch_name) $normal_color " "
+      if git_is_touched
+        echo -n -s -e $dirty "\n$failed_color$arrow4"
+      else
+        echo -n -s -e (git_ahead $ahead $behind $diverged $none) "\n$failed_color$arrow4"
+      end
     end
+
   else
-    echo -n -s " " $directory_color $cwd $normal_color
+    if test $last_command_status -eq 0
+      # separate lines to minimize spaces
+      echo -n -s "$tanabata $normal_color" 
+      echo -n -s "with $color_name$USER $normal_color"
+      echo -n -s -e "at $directory_color$cwd $normal_color\n$good_color$arrow4"
+    else
+      echo -n -s "$lantern $normal_color" 
+      echo -n -s "with $color_name$USER $normal_color"
+      echo -n -s -e "at $directory_color$cwd $normal_color\n$failed_color$arrow4"
+    end
   end
 
   echo -n -s " "
