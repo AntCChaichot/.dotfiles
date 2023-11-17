@@ -48,6 +48,12 @@ sudo apt install tmux
 ```bash
 sudo apt install kitty
 ```
+### Touchegg
+```bash
+sudo apt install touchegg
+```
+
+
 
 ### Vim Plugins
 Create a directory for the plugins manually since not using a package manager
