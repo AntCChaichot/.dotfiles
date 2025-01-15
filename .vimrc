@@ -6,8 +6,8 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-syntax on
-filetype indent on
+syntax enable
+filetype plugin indent on
 set autoindent " copy indent from current line when starting a new line 
 set shiftwidth=0 " number of spaces used for each step of autoindent, if 0, tabstop value is used
 set tabstop=4 " number of spaces the fule counts for
@@ -101,3 +101,15 @@ map  <C-n> :tabnew<CR>
 " Change default arrows
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+" Ignore errors latex
+let g:Tex_IgnoredWarnings = 
+    \'Underfull'."\n".
+    \'Overfull'."\n".
+    \'specifier changed to'."\n".
+    \'You have requested'."\n".
+    \'Missing number, treated as zero.'."\n".
+    \'There were undefined references'."\n".
+    \'Citation %.%# undefined'."\n".
+    \'Double space found.'."\n"
+let g:Tex_IgnoreLevel = 8
