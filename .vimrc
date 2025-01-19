@@ -62,7 +62,7 @@ let g:lightline = {
       \             [ 'readonly', 'filename', 'inspire'] ]
       \ },
       \ 'component': {
-      \   'inspire': 'Fighting!',
+      \   'inspire': 'Keep Breathing ☺ |',
       \ },
       \ 'component_function': {
       \   'filename': 'LightlineFilename',
