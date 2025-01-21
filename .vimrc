@@ -69,7 +69,7 @@ if s:desktop_session == 'x11'
 elseif s:desktop_session == 'wayland'
     " copy to system cliboard (wayland)
     " map works in all mode, install wl-clipboard first, remove backslash
-    map \"+y y:call system("wl-copy", @")<CR>
+    map "+y y:call system("wl-copy", @")<CR>
 
 else
   echom "Unknown desktop session"
