@@ -46,14 +46,34 @@ inoremap kj <esc>
 cnoremap kj <C-C>
 cnoremap jk <C-C>
 
+" Function to detect desktop session type (X11 or Wayland)
+function! GetDesktopSession()
+  if exists('$WAYLAND_DISPLAY')
+    return 'wayland'
+  elseif exists('$DISPLAY')
+    return 'x11'
+  else
+    return 'unknown'
+  endif
+endfunction
 
-" copy to system clipboard (X11) using "+y
-" install xclip (if haven't already)
-" map \"+y y:call system(\"xclip -selection clip-board", @")<CR>
+" Get the desktop session type
+let s:desktop_session = GetDesktopSession()
 
-" copy to system cliboard (wayland)
-" map works in all mode, install wl-clipboard first, remove backslash
-map "+y y:call system("wl-copy", @")<CR>
+" Echo different messages based on the session type
+if s:desktop_session == 'x11'
+    " copy to system clipboard (X11) using "+y
+    " install xclip (if haven't already)
+    map "+y y:call system("xclip -selection clip-board", @")<CR>
+
+elseif s:desktop_session == 'wayland'
+    " copy to system cliboard (wayland)
+    " map works in all mode, install wl-clipboard first, remove backslash
+    map \"+y y:call system("wl-copy", @")<CR>
+
+else
+  echom "Unknown desktop session"
+endif
 
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
