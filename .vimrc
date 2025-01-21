@@ -49,11 +49,11 @@ cnoremap jk <C-C>
 
 " copy to system clipboard (X11) using "+y
 " install xclip (if haven't already)
-map "+y y:call system("xclip -selection clip-board", @")<CR>
+" map \"+y y:call system(\"xclip -selection clip-board", @")<CR>
 
 " copy to system cliboard (wayland)
 " map works in all mode, install wl-clipboard first, remove backslash
-" map \"+y y:call system("wl-copy", @")<CR>
+map "+y y:call system("wl-copy", @")<CR>
 
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
