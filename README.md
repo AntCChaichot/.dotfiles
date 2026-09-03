@@ -40,6 +40,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```bash
 sudo apt install vim
 ```
+### Git
+```bash
+sudo apt install git
+```
 ### Tmux
 ```bash
 sudo apt install tmux
