@@ -41,6 +41,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 sudo apt install vim
 ```
 ### Git
+- don't forget SSH keys
 ```bash
 sudo apt install git
 ```
