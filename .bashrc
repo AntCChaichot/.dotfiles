@@ -115,3 +115,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# autocomplete terraform scripts
+complete -C /usr/bin/terraform terraform
