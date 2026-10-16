@@ -76,27 +76,27 @@ git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/NERDTree/start/N
 
 ```bash
 # For Fish
-ln -sf ~/.dotfiles/fish_variables ~/.config/fish/fish_variables
-ln -sf ~/.dotfiles/fish_functions/* ~/.config/fish/functions/
+ln -sf $HOME/.dotfiles/fish_variables $HOME/.config/fish/fish_variables
+ln -sf $HOME/.dotfiles/fish_functions/* $HOME/.config/fish/functions/
 
 # For Zsh
-ln -sf ~/.dotfiles/.zshrc ~/.zshrc
+ln -sf $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # For Bash
-ln -sf ~/.dotfiles/.bashrc ~/.bashrc
-ln -sf ~/.dotfiles/.profile ~/.profile
+ln -sf $HOME/.dotfiles/.bashrc $HOME/.bashrc
+ln -sf $HOME/.dotfiles/.profile $HOME/.profile
 
 # For git
-ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -sf $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 
 # For vim
-ln -sf ~/.dotfiles/.vimrc ~/.vimrc
+ln -sf $HOME/.dotfiles/.vimrc $HOME/.vimrc
 
 # For tmux
-ln -sf ~/.dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf $HOME/.dotfiles/.tmux.conf $HOME/.tmux.conf
 
 # For kitty
-ln -sf ~/.dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+ln -sf $HOME/.dotfiles/kitty.conf $HOME/.config/kitty/kitty.conf
 ```
 
 4. Change shell according to your preferences
